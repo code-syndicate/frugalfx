@@ -1,1282 +1,617 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
-    <title>FxInvestor </title>
-    <meta charset="utf-8">
-    <meta name="description" content="">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    
-     <base href="/static/main/" >
-     
-     
-     <!-- Smartsupp Live Chat script -->
-<script type="text/javascript">
-var _smartsupp = _smartsupp || {};
-_smartsupp.key = 'c376e08067b69c6b4c17585f2e062986b6d6888c';
-window.smartsupp||(function(d) {
-  var s,c,o=smartsupp=function(){ o._.push(arguments)};o._=[];
-  s=d.getElementsByTagName('script')[0];c=d.createElement('script');
-  c.type='text/javascript';c.charset='utf-8';c.async=true;
-  c.src='https://www.smartsuppchat.com/loader.js?';s.parentNode.insertBefore(c,s);
-})(document);
-</script>
-    
-    
-    <!-- Calling Favicon -->
-    <link rel="shortcut icon" type="image/x-icon" href="img/favicon.png">
-    <!-- Calling Favicon -->
-    <!-- ********************* -->
-    <!-- CSS files -->
-    <link rel="stylesheet" href="css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/animate.css">
-    <link rel="stylesheet" href="css/all.min.css">
-    <link rel="stylesheet" href="css/owl.carousel.min.css">
-    <link rel="stylesheet" href="css/nice-select.css">
-    <link rel="stylesheet" href="css/magnific-popup.css">
-    <link rel="stylesheet" href="css/meanmenu.css" media="all">
-    <link rel="stylesheet" href="css/default.css">
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" class="color-changing" href="css/color.css">
-    <link rel="stylesheet" href="css/responsive.css">
-    
-    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
-    <!-- End CSS files -->
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <base href="/static/main/">
+
+  <title>FRUGAL FX</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link href="assets/img/favicon.png" rel="icon">
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="assets/vendor/remixicon/remixicon.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="assets/css/style.css" rel="stylesheet">
+
+
 </head>
 
 <body>
-    <!-- Preloader start -->
-    <div class="loader-page flex-center">
-        <img src="img/loader.gif" alt="">
+
+  <!-- ======= Header ======= -->
+  <header id="header" class="fixed-top d-flex align-items-center">
+    <div class="container d-flex align-items-center justify-content-between">
+
+      <div class="logo">
+       
+     
+         <a href="index.html"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>
+      </div>
+
+      <nav id="navbar" class="navbar">
+        <ul>
+          <li><a class="nav-link scrollto active" href="#hero">Home</a></li>
+          <li><a class="nav-link scrollto" href="#about">About</a></li>
+          <li><a class="nav-link scrollto" href="#services">Services</a></li>
+          <li><a class="nav-link scrollto" href="#team">Team</a></li>
+          <li><a class="nav-link scrollto" href="#contact">Contact</a></li>
+          <li><a class="getstarted scrollto" href="#about">Get Started</a></li>
+        </ul>
+        <script type="text/javascript" src="https://files.coinmarketcap.com/static/widget/coinMarquee.js"></script><div id="coinmarketcap-widget-marquee" coins="1,1027,825,2010,6636,52" currency="USD" theme="light" transparent="true" show-symbol-logo="true"></div>
+        <i class="bi bi-list mobile-nav-toggle"></i>
+      </nav><!-- .navbar -->
+
     </div>
-    <!-- Preloader end -->
+  </header><!-- End Header -->
 
-    <!-- Header start -->
-    <header class="transperant-head transition-4 ">
-    
-    
-    
-    
-    
-  {% if msg %}
-  <!-- alert panel-->
-  
- <div id = 'msg01' style = 'display:block;z-index:100;' class = 'w3-modal  '>
- <div class = ' w3-modal-content w3-animate-left w3-padding-16 w3-round-large w3-container w3-card-4 w3-{{color}}'>
- 
- <p class = 'w3-medium '  style = 'font-family:Raleway;font-weight:bold' > {{ msg | safe  }} </p>
- 
- <button onclick = 'document.getElementById("msg01").style.display = "none" ' class = 'w3-btn w3-display-topright'> &times </button>
- 
- </div>
- </div>
-  {% endif %}
-  
-    
-    
-    
-        <div class="container">
-            <div class="row align-items-center">
-                <div class="col-lg-2 col-md-5 col-sm-4 col-5">
-                    <div class="logo transition-4">
-                        <a href="{% url 'main:home_view' %}">
-                            <img src="img/logo/logo.png" class="transition-4" alt="logo">
-                        </a>
-                    </div>
-                </div>
-                <div class="col-lg-10 col-md-7 col-sm-8 col-7">
-                    <div class="icon-links d-flex align-items-center">
-                       
-                        
-                        <a href="{% url 'main:contact_view' %}" class="btn btn-round d-none d-sm-block blob-small">CONTACT US</a>
-                    </div>
-                    <div class="menu-links">
-                        <nav class="main-menu white">
-                            <ul>
-                                <li class="active">
-                                    <a href="{% url 'main:home_view' %}">Home </a>
-                                    
-                                    
-                                    <li class="active">
-                                    <a href="{% url 'users:dashboard_view' %}"> Dashboard</a>
-                                    
-                                </li>
-                                    
-                                </li>
-                                
-                                
-                                <li class="active">
-                                    <a href="{% url 'users:verify_view' %}"> Verify Pay </a>
-                                    
-                                </li>
-                                
-                                
-                                {% if not request.user.is_authenticated %}
-                                
-                                <li><a href="{% url 'users:login_view' %}">Login</a></li>
-                                
-                                {% else %}
-                                
-                                <li class="active">
-                                    <a href="{% url 'users:logout_view' %}"> Logout </a>
-                                    
-                                </li>
-                                
-                                {% endif %}
-                                
-                                        <li><a href="{% url 'users:create_view' %}">Signup</a></li>
-                                        
-                                  
-                                <li>
-                                    <a href="{% url 'main:about_view' %}">About Us </a>
-                                    
+  <!-- ======= Hero Section ======= -->
+  <section id="hero" class="d-flex align-items-center">
 
-                                </li>      
-                                        
-                                        
-                            </ul>
-                        </nav>
-                    </div>
-                </div>
-                <div class="col-12">
-                    <div class="mobile-menu"></div>
-                </div>
-            </div>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-6 pt-5 pt-lg-0 order-2 order-lg-1 d-flex flex-column justify-content-center">
+          <h1 data-aos="fade-up">Grow your income with Frugal FX</h1>
+          <h2 data-aos="fade-up" data-aos-delay="400">A simple, fast and trust worthy Crypto investment Platform</h2>
+          <div data-aos="fade-up" data-aos-delay="800">
+            <a href="#about" class="btn-get-started scrollto">Get Started</a>
+          </div>
+        </div>
+        <div class="col-lg-6 order-1 order-lg-2 hero-img" data-aos="fade-left" data-aos-delay="200">
+          <img src="assets/img/hero-img.png" class="img-fluid animated" alt="">
+        </div>
+      </div>
+    </div>
+
+  </section><!-- End Hero -->
+
+  <main id="main">
+
+    <!-- ======= Clients Section ======= -->
+    <section id="clients" class="clients clients">
+      <div class="container">
+
+        <div class="row">
+
+          <div class="col-lg-2 col-md-4 col-6">
+            <img src="assets/img/clients/client-1.png" class="img-fluid" alt="" data-aos="zoom-in">
+          </div>
+
+          <div class="col-lg-2 col-md-4 col-6">
+            <img src="assets/img/clients/client-2.png" class="img-fluid" alt="" data-aos="zoom-in" data-aos-delay="100">
+          </div>
+
+          <div class="col-lg-2 col-md-4 col-6">
+            <img src="assets/img/clients/client-3.png" class="img-fluid" alt="" data-aos="zoom-in" data-aos-delay="200">
+          </div>
+
+          <div class="col-lg-2 col-md-4 col-6">
+            <img src="assets/img/clients/client-4.png" class="img-fluid" alt="" data-aos="zoom-in" data-aos-delay="300">
+          </div>
+
+          <div class="col-lg-2 col-md-4 col-6">
+            <img src="assets/img/clients/client-5.png" class="img-fluid" alt="" data-aos="zoom-in" data-aos-delay="400">
+          </div>
+
+          <div class="col-lg-2 col-md-4 col-6">
+            <img src="assets/img/clients/client-6.png" class="img-fluid" alt="" data-aos="zoom-in" data-aos-delay="500">
+          </div>
+
         </div>
 
-    </header>
-    
-    <!-- Header end -->
+      </div>
+    </section><!-- End Clients Section -->
 
-    <!-- Slider start -->
-    <section class="slider-area" style="background-image: url('img/banner/BitterSinfulChinesecrocodilelizard-size_restricted.gif');" data-overlay="9">
-        <div class="container">
-            <div class="row">
-                <div class="col-xl-8 offset-xl-2 text-center">
-                    <div class="slide-div ">
-                        <div class="owl-carousel slider-1">
-                            <div class="item">
-                                <h5 class="line-head">
-                  <span class="line before"></span>
-                   Years of experience
-                  <span class="line  after"></span>
-                </h5>
-                                <h1 class="banner-head mt-40 mb-50 mt-xs-20 mb-xs-30">Let's Reinvent the nature of Investment for you. </h1>
-                                <a href="#" class="btn btn-square">Learn More<i class="fas fa-long-arrow-alt-right ml-20"></i></a>
-                            </div>
-                            <div class="item">
-                                <h5 class="line-head">
-                  <span class="line before"></span>
-                    1000+ Happy Clients
-                  <span class="line  after"></span>
-                </h5>
-                                <h1 class="banner-head mt-40 mb-50 mt-xs-20 mb-xs-30"> Earn double profits from your investments</h1>
-                                <a href="#" class="btn btn-square">Read More<i class="fas fa-long-arrow-alt-right ml-20"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+    <!-- ======= About Us Section ======= -->
+    <section id="about" class="about">
+      <div class="container">
+
+        <div class="section-title" data-aos="fade-up">
+          <h2>About Us</h2>
         </div>
-    </section>
-    <!-- Slider end -->
 
-    <!-- Our features start -->
-
-    <section class="features-area bg-light-white pt-40 pb-40 pb-xs-00">
-        <div class="container">
-            <div class="row">
-                <div class="col-sm-4 text-center text-lg-left">
-                    <div class="icon-box d-flex flex-column flex-lg-row align-items-center">
-                        <div class="icon-img mr-20 mr-md-00 mb-md-10">
-                            <img src="img/feature/icon1.png" alt="Icon">
-                        </div>
-                        <div class="icon-text">
-                            <h5 class="f-700">24/7 Suport Team</h5>
-                            <p>Always active to assist</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-sm-4 text-center text-lg-left">
-                    <div class="icon-box d-flex flex-column flex-lg-row align-items-center">
-                        <div class="icon-img mr-20 mr-md-00 mb-md-10">
-                            <img src="img/feature/icon2.png" alt="Icon">
-                        </div>
-                        <div class="icon-text">
-                            <h5 class="f-700">Quality Services</h5>
-                            <p>Not Loud, our clients know better</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-sm-4 text-center text-lg-left">
-                    <div class="icon-box d-flex flex-column flex-lg-row align-items-center">
-                        <div class="icon-img mr-20 mr-md-00 mb-md-10">
-                            <img src="img/feature/icon3.png" alt="Icon">
-                        </div>
-                        <div class="icon-text">
-                            <h5 class="f-700">Budget Friendly</h5>
-                            <p>Invest as low as $200</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <script src="https://widgets.coingecko.com/coingecko-coin-price-marquee-widget.js"></script>
-    <coingecko-coin-price-marquee-widget  coin-ids="bitcoin,eos,ethereum,litecoin,ripple,tron" currency="usd" background-color="#ffffff" locale="en"></coingecko-coin-price-marquee-widget>
-    <!-- Our features end -->
-
-    <!-- About us start -->
-    <section class="about-us pt-100 pb-100">
-        <div class="container">
-            <div class="row align-items-xl-center">
-                <div class="col-lg-5">
-                    <div class="ceo-video relative img-lined mx-auto shadow-1 wow fadeInLeft">
-                        <img src="img/about/ceo.jpg" alt="">
-                        <div class="blob green transform-center">
-                            <a href="https://www.youtube.com/watch?v=qtQgbdmIO30" class="popup-video"> <i class="fas fa-play"></i></a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-7">
-                    <div class="about-text mt-md-60 text-center text-lg-left wow fadeInRight">
-                        <div class="fancy-head left-al  mb-10">
-                            <h5 class="line-head mb-10">
-              <span class="line before d-lg-none"></span>
-                About Us
-              <span class="line  after"></span>
-            </h5>
-                            <h1>Our Success Story</h1>
-                        </div>
-                        <p>Factor Investopedia has since her establishment decades ago provided a trustworthy investment channel for all form of Business owners.</p>
-                        <p>Since the rise of Crypto Currency and blockchain technology, we have been able move our assets to this platform making life easier for all our investors. With our investment policy you are allowed to withdraw to USD.   <a href="{% url 'main:about_view' %}">Read More</a></p>
-                        
-                        <div class="about-author mt-20 d-flex align-items-center justify-content-center justify-content-lg-start">
-                            <div class="signature mr-45 mr-xs-15">
-                                <img src="img/about/signature.png" alt="">
-                            </div>
-                            <div class="name-author">
-                                <p class="name">John Adams</p>
-                                <p>Founder & CEO</p>
-                            </div>
-                        </div>
-                        <div class="hr-line mb-30 mt-30"></div>
-                        <div class="row">
-                            <div class="col-sm-4">
-                                <div class="count-box wow fadeInUp">
-                                    <h3 class="f-900 mb-10"><span class="counter">4200</span>+</h3>
-                                    <p>Happy Clients</p>
-                                </div>
-                            </div>
-                            <div class="col-sm-4">
-                                <div class="count-box wow fadeInUp" data-wow-delay=".2s">
-                                    <h3 class="f-900 mb-10"><span class="counter">13</span>+</h3>
-                                    <p>Awards Won</p>
-                                </div>
-                            </div>
-                            <div class="col-sm-4">
-                                <div class="count-box wow fadeInUp" data-wow-delay=".4s">
-                                    <h3 class="f-900 mb-10"><span class="counter">$ 300,000,000</span>+</h3>
-                                    <p>Withdrawal Made</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- About us end -->
-
-    <!-- Service start -->
-    <section class="services bg-light-white pt-95 pb-70 bg">
-        <div class="container">
-            <div class="row align-items-end  mb-45">
-                <div class="col-lg-7 col-md-12 text-center text-lg-left">
-                    <div class="fancy-head left-al">
-                        <h5 class="line-head mb-15">
-                  <span class="line before d-lg-none"></span>
-                    Our Services
-                  <span class="line after"></span>
-                </h5>
-                        <h1>What We Offer for You</h1>
-                    </div>
-                </div>
-                <div class="col-lg-5 col-md-12 text-center text-lg-right">
-                    <a href="#" ></a>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-lg-4 col-md-6">
-                    <div class="service-box transition-4 text-center relative img-lined mb-30">
-                        <div class="service-icon">
-                            <div class="service-icon-bg"></div>
-                            <img src="img/service/1.png" class="transform-center" alt="">
-                        </div>
-                        <div class="service-text">
-                            <h4 class="f-700 mt-30 mb-10">
-                    <a href="#">Investment Planning</a>
-                  </h4>
-                            <p>Our platform allows you to invest as low as $200 which has no restriction on withdrawal or whatsoever. Whatever you invest gets a predictive return of about 50% to 200% in profit</p>
-                            <a href="#" class="btn btn-round mt-10">Learn More</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6">
-                    <div class="service-box transition-4 text-center relative img-lined mb-30">
-                        <div class="service-icon">
-                            <div class="service-icon-bg"></div>
-                            <img src="img/service/2.png" class="transform-center" alt="">
-                        </div>
-                        <div class="service-text">
-                            <h4 class="f-700 mt-30 mb-10">
-                    <a href="#">Financial Planning</a>e
-                  </h4>
-                            <p>Monitor and control your spending habits accross all your source of income with our financial planing consultancy service. Chat with our Suppport Team Now for more details</p>
-                            <a href="#" class="btn btn-round mt-10">Learn More</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6">
-                    <div class="service-box transition-4 text-center relative img-lined mb-30">
-                        <div class="service-icon">
-                            <div class="service-icon-bg"></div>
-                            <img src="img/service/3.png" class="transform-center" alt="">
-                        </div>
-                        <div class="service-text">
-                            <h4 class="f-700 mt-30 mb-10">
-                    <a href="#">Business Management</a>
-                  </h4>
-                            <p>Got a Business that needs management and strategic planing, our Business management Consultancy Service will up the game of your business in the market</p>
-                            <a href="services-details.html" class="btn btn-round mt-10">Learn More</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6">
-                    <div class="service-box transition-4 text-center relative img-lined mb-30">
-                        <div class="service-icon">
-                            <div class="service-icon-bg"></div>
-                            <img src="img/service/4.png" class="transform-center" alt="">
-                        </div>
-                        <div class="service-text">
-                            <h4 class="f-700 mt-30 mb-10">
-                    <a href="#">Mutual Funds</a>
-                  </h4>
-                            <p>Good Average Annual Return for a Mutual Fund
-
-                                For stock mutual funds, a “good” long-term return (annualized, for 10 years or more) is 8%-10%. For bond mutual funds, a good long-term return would be 4%-5%.</p>
-                            <a href="#" class="btn btn-round mt-10">Learn More</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6">
-                    <div class="service-box transition-4 text-center relative img-lined mb-30">
-                        <div class="service-icon">
-                            <div class="service-icon-bg"></div>
-                            <img src="img/service/5.png" class="transform-center" alt="">
-                        </div>
-                        <div class="service-text">
-                            <h4 class="f-700 mt-30 mb-10">
-                    <a href="#">Market Research</a>
-                  </h4>
-                            <p>get in touch with our professionals on your market research needs at affordable prices today and yeah free for Investors on our platform with over $100,000 in stock. Contact our support team now for enquiries on how to get started.</p>
-                            <a href="services-details.html" class="btn btn-round mt-10">Learn More</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6">
-                    <div class="service-box transition-4 text-center relative img-lined mb-30">
-                        <div class="service-icon">
-                            <div class="service-icon-bg"></div>
-                            <img src="img/service/6.png" class="transform-center" alt="">
-                        </div>
-                        <div class="service-text">
-                            <h4 class="f-700 mt-30 mb-10">
-                    <a href="#">Investors Connect</a>
-                  </h4>
-                            <p>In as much as we help you earn, we also organize webinars where investors would meet and interact with each other. This is one of the Largest Private Crypto Investors Webinars packed with amazing gifts (gift card) and instant connect</p>
-                            <a href="#" class="btn btn-round mt-10">Learn More</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- Service end -->
-
-    <!-- Features list start -->
-    <section class="feature-list-area pt-100 pb-100">
-        <div class="container">
-            <div class="row align-items-xl-center">
-                <div class="col-lg-6">
-                    <div class="video-present relative img-lined shadow-1 bg-blue">
-                        <img src="img/feature/office_video.jpg" class="opacity-5 img-100" alt="">
-                        <div class="video-text transform-center">
-                            <div class="blob green video-blob">
-                                <a href="im.gif" class="popup-video"> <i class="fas fa-play"></i></a>
-                            </div>
-                            <h4 class="white f-700 mt-15">From Animaker</h4>
-                            <p class="white mt-5 mb-0">Comfortably Smart Employees at your service</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-6 ">
-                    <div class="feature-all mt-md-60">
-                        <div class="fancy-head left-al text-left text-md-center text-lg-left mb-30">
-                            <h5 class="line-head mb-15">
-              <span class="line before d-sm-none d-md-block d-lg-none"></span>
-                Why Choose Us?
-              <span class="line after"></span>
-            </h5>
-                            <h1>Our Features </h1>
-                        </div>
-                        <div class="feature-list">
-                            <ul class="feature-list-all">
-                                <li class="">
-                                    <div class="d-flex align-items-center">
-                                        <div class="feature-num mr-25">
-                                            <span class="flex-center bg-light-white">01</span>
-                                        </div>
-                                        <div class="feature-detail">
-                                            <h5 class="f-700">Decades Of Experiance</h5>
-                                            <p>We have been investing your finance longer than you imagined.</p>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="d-flex align-items-center">
-                                        <div class="feature-num mr-25">
-                                            <span class="flex-center bg-light-white">02</span>
-                                        </div>
-                                        <div class="feature-detail">
-                                            <h5 class="f-700">24/7 Live Support</h5>
-                                            <p>Always active to assist</p>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="d-flex align-items-center">
-                                        <div class="feature-num mr-25">
-                                            <span class="flex-center bg-light-white">03</span>
-                                        </div>
-                                        <div class="feature-detail">
-                                            <h5 class="f-700">Business with Thought Leadership</h5>
-                                            <p>Making world leading entrepreneurs.</p>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="d-flex align-items-center">
-                                        <div class="feature-num mr-25">
-                                            <span class="flex-center bg-light-white">04</span>
-                                        </div>
-                                        <div class="feature-detail">
-                                            <h5 class="f-700">13+ Awards Winning Company</h5>
-                                            <p>We hope to win more awards for you dear Investor.</p>
-                                        </div>
-                                    </div>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- Features list end -->
-
-    <!-- Request callback start -->
-    <section class="callback-area pt-95 pb-85" style="background-image: url('img/banner/banner_1.jpg');" data-overlay="9">
-        <div class="container">
-            <div class="row">
-                <div class="col-xl-12">
-                    <div class="fancy-head text-center relative z-5 mb-40 wow fadeInDown">
-                        <h5 class="line-head mb-15 white">
-                  <span class="line before bg-white"></span>
-                    Contact Us
-                  <span class="line after bg-white"></span>
-                </h5>
-                        <h1 class="white">Request a Call Back</h1>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-xl-12">
-                    <form action="#" class="relative z-5  wow fadeInUp">
-                        <div class="row">
-                            <div class="col-xl-10 col-lg-12">
-                                <div class="row">
-                                    <div class="col-md-4">
-                                        <div class="form-group relative">
-                                            <input type="text" class="form-control input-white shadow-2" id="name" placeholder="Name">
-                                            <i class="far fa-user transform-v-center"></i>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-4">
-                                        <div class="form-group relative">
-                                            <input type="email" class="form-control input-white shadow-2" id="email" placeholder="Email">
-                                            <i class="far fa-envelope transform-v-center"></i>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-4">
-                                        <div class="form-group relative">
-                                            <input type="text" class="form-control input-white shadow-2" id="phone" placeholder="Phone number">
-                                            <i class="fas fa-mobile-alt transform-v-center"></i>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-xl-2 col-lg-12">
-                                <button class="btn btn-blue btn-block request-btn uppercase shadow-2">submit</button>
-                            </div>
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- Request callback end -->
-
-    <!-- Team area start
-    <section class="team-area pt-95 pb-100">
-        <div class="container">
-            <div class="row align-items-end text-center text-lg-left  mb-45">
-                <div class="col-lg-7">
-                    <div class="fancy-head left-al">
-                        <h5 class="line-head mb-15">
-                  <span class="line before d-lg-none"></span>
-                    Our Team
-                  <span class="line after"></span>
-                </h5>
-                        <h1>Meet Our Best Team</h1>
-                    </div>
-                </div>
-                <div class="col-lg-5 text-lg-right">
-                    <div class="arrow-navigation mb-15 mt-md-20">
-                        <a href="#" class="nav-slide slide-left">
-                            <img src="img/icons/ar_lt.png" alt="">
-                        </a>
-                        <a href="#" class="nav-slide slide-right">
-                            <img src="img/icons/ar_rt.png" alt="">
-                        </a>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-xl-12">
-                    <div class="owl-carousel team-slider">
-                        <div class="item">
-                            <div class="team-each">
-                                <div class="team-image relative img-lined">
-                                    <img src="img/team/team1.jpg" alt="">
-                                    <div class="hover-team z-10 transition-4">
-                                        <a href="team-detail.html" class="plus-btn flex-center transform-center">
-                                            <i class="fas fa-plus"></i>
-                                        </a>
-                                        <ul class="social-icons transform-h-center">
-                                            <li>
-                                                <a href="#"><i class="fab fa-facebook-f"></i></a>
-                                            </li>
-                                            <li>
-                                                <a href="#"><i class="fab fa-twitter"></i></a>
-                                            </li>
-                                            <li>
-                                                <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                                            </li>
-                                            <li>
-                                                <a href="#"><i class="fab fa-google-plus-g"></i></a>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div>
-                                <div class="team-info text-center transition-4">
-                                    <h5>
-                  <a href="#" class="f-700">Jessica David</a>
-                </h5>
-                                    <p class="mb-0">Co Founder</p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="item">
-                            <div class="team-each">
-                                <div class="team-image relative img-lined">
-                                    <img src="img/team/team2.jpg" alt="">
-                                    <div class="hover-team z-10 transition-4">
-                                        <a href="team-detail.html" class="plus-btn flex-center transform-center">
-                                            <i class="fas fa-plus"></i>
-                                        </a>
-                                        <ul class="social-icons transform-h-center">
-                                            <li>
-                                                <a href="#"><i class="fab fa-facebook-f"></i></a>
-                                            </li>
-                                            <li>
-                                                <a href="#"><i class="fab fa-twitter"></i></a>
-                                            </li>
-                                            <li>
-                                                <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                                            </li>
-                                            <li>
-                                                <a href="#"><i class="fab fa-google-plus-g"></i></a>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div>
-                                <div class="team-info text-center transition-4">
-                                    <h5>
-                  <a href="#" class="f-700">Jhone Doe</a>
-                </h5>
-                                    <p class="mb-0">Finance Manager</p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="item">
-                            <div class="team-each">
-                                <div class="team-image relative img-lined">
-                                    <img src="img/team/team3.jpg" alt="">
-                                    <div class="hover-team z-10 transition-4">
-                                        <a href="team-detail.html" class="plus-btn flex-center transform-center">
-                                            <i class="fas fa-plus"></i>
-                                        </a>
-                                        <ul class="social-icons transform-h-center">
-                                            <li>
-                                                <a href="#"><i class="fab fa-facebook-f"></i></a>
-                                            </li>
-                                            <li>
-                                                <a href="#"><i class="fab fa-twitter"></i></a>
-                                            </li>
-                                            <li>
-                                                <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                                            </li>
-                                            <li>
-                                                <a href="#"><i class="fab fa-google-plus-g"></i></a>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div>
-                                <div class="team-info text-center transition-4">
-                                    <h5>
-                  <a href="#" class="f-700">Jessica David</a>
-                </h5>
-                                    <p class="mb-0">Marketing Manager</p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="item">
-                            <div class="team-each">
-                                <div class="team-image relative img-lined">
-                                    <img src="img/team/team4.jpg" alt="">
-                                    <div class="hover-team z-10 transition-4">
-                                        <a href="team-detail.html" class="plus-btn flex-center transform-center">
-                                            <i class="fas fa-plus"></i>
-                                        </a>
-                                        <ul class="social-icons transform-h-center">
-                                            <li>
-                                                <a href="#"><i class="fab fa-facebook-f"></i></a>
-                                            </li>
-                                            <li>
-                                                <a href="#"><i class="fab fa-twitter"></i></a>
-                                            </li>
-                                            <li>
-                                                <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                                            </li>
-                                            <li>
-                                                <a href="#"><i class="fab fa-google-plus-g"></i></a>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div>
-                                <div class="team-info text-center transition-4">
-                                    <h5>
-                  <a href="#" class="f-700">Jessica David</a>
-                </h5>
-                                    <p class="mb-0">Web Designer</p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="item">
-                            <div class="team-each">
-                                <div class="team-image relative img-lined">
-                                    <img src="img/team/team1.jpg" alt="">
-                                    <div class="hover-team z-10 transition-4">
-                                        <a href="team-detail.html" class="plus-btn flex-center transform-center">
-                                            <i class="fas fa-plus"></i>
-                                        </a>
-                                        <ul class="social-icons transform-h-center">
-                                            <li>
-                                                <a href="#"><i class="fab fa-facebook-f"></i></a>
-                                            </li>
-                                            <li>
-                                                <a href="#"><i class="fab fa-twitter"></i></a>
-                                            </li>
-                                            <li>
-                                                <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                                            </li>
-                                            <li>
-                                                <a href="#"><i class="fab fa-google-plus-g"></i></a>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div>
-                                <div class="team-info text-center transition-4">
-                                    <h5>
-                  <a href="#" class="f-700">Jessica David</a>
-                </h5>
-                                    <p class="mb-0">Co Founder</p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="item">
-                            <div class="team-each">
-                                <div class="team-image relative img-lined">
-                                    <img src="img/team/team2.jpg" alt="">
-                                    <div class="hover-team z-10 transition-4">
-                                        <a href="team-detail.html" class="plus-btn flex-center transform-center">
-                                            <i class="fas fa-plus"></i>
-                                        </a>
-                                        <ul class="social-icons transform-h-center">
-                                            <li>
-                                                <a href="#"><i class="fab fa-facebook-f"></i></a>
-                                            </li>
-                                            <li>
-                                                <a href="#"><i class="fab fa-twitter"></i></a>
-                                            </li>
-                                            <li>
-                                                <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                                            </li>
-                                            <li>
-                                                <a href="#"><i class="fab fa-google-plus-g"></i></a>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div>
-                                <div class="team-info text-center transition-4">
-                                    <h5>
-                  <a href="#" class="f-700">Jhone Doe</a>
-                </h5>
-                                    <p class="mb-0">Finance Manager</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- Team area end -->
-
-    <!-- Pricing area start -->
-    <section class="pricong-area bg-light-white pt-95 pb-100">
-        <div class="container">
-            <div class="row mb-60 align-items-end">
-                <div class="col-lg-7 text-center text-lg-left">
-                    <div class="fancy-head left-al wow fadeInLeft">
-                        <h5 class="line-head mb-15">
-                  <span class="line before d-lg-none"></span>
-                    Our Pricing
-                  <span class="line after"></span>
-                </h5>
-                        <h1>Our Pricing Plans</h1>
-                    </div>
-                </div>
-                <div class="col-lg-5 mt-md-25">
-                    <ul class="nav nav-pills price-tabs align-items-center mb-15 justify-content-center float-lg-right  wow fadeInRight">
-                        <li class="nav-item">
-                            <a class="nav-link active" data-toggle="tab" href="#monthly">MINI</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" data-toggle="tab" href="#yearly">SMART</a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-xl-12">
-                    <div class="tab-content">
-                        <div id="monthly" class=" tab-pane  active">
-                            <div class="row justify-content-md-center">
-                                <div class="col-lg-4 col-md-6 mb-sm-30">
-                                    <div class="price-each relative img-lined text-center wow fadeInUp">
-                                        <div class="price-head z-8">
-                                            <div class="price-icon relative flex-center">
-                                                <img src="img/price/price1.png" alt="">
-                                            </div>
-                                            <h4 class="underlined f-700 mt-30 mb-25 pb-25">Basic Plan</h4>
-                                        </div>
-                                        <div class="price-text z-8">
-                                            <h1 class="f-700">
-                          <span>$</span>200<span>/cap</span>
-                        </h1>
-                                            
-                                        </div>
-                                        <a href="#" class="btn btn-round wide mt-10 z-8">Start Now</a>
-                                    </div>
-                                </div>
-                                <div class="col-lg-4 col-md-6">
-                                    <div class="price-each relative img-lined text-center active shadow-1 wow fadeInUp" data-wow-delay=".2s">
-                                        <div class="price-head z-8">
-                                            <div class="price-icon relative flex-center">
-                                                <img src="img/price/price2.png" alt="">
-                                            </div>
-                                            <h4 class="underlined f-700 mt-30 mb-25 pb-25">Business</h4>
-                                        </div>
-                                        <div class="price-text z-8">
-                                            <h1 class="f-700">
-                          <span>$</span>400 <span>/cap</span>
-                        </h1>
-                                            
-                                        </div>
-                                        <a href="#" class="btn btn-round-blue wide mt-10 z-8">Start Now</a>
-                                    </div>
-                                </div>
-                                <div class="col-lg-4 col-md-6 mt-md-30">
-                                    <div class="price-each relative img-lined text-center wow fadeInUp" data-wow-delay=".4s">
-                                        <div class="price-head z-8">
-                                            <div class="price-icon relative flex-center">
-                                                <img src="img/price/price3.png" alt="">
-                                            </div>
-                                            <h4 class="underlined f-700 mt-30 mb-25 pb-25">Professional</h4>
-                                        </div>
-                                        <div class="price-text z-8">
-                                            <h1 class="f-700">
-                          <span>$</span>500<span>/cap</span>
-                        </h1>
-                                         
-                                        </div>
-                                        <a href="#" class="btn btn-round wide mt-10 z-8">Start Now</a>
-                                    </div>
-                                </div>
-                                <div class="col-lg-4 col-md-6 mt-md-30">
-                                    <div class="price-each relative img-lined text-center wow fadeInUp" data-wow-delay=".4s">
-                                        <div class="price-head z-8">
-                                            <div class="price-icon relative flex-center">
-                                                <img src="img/price/price1.png" alt="">
-                                            </div>
-                                            <h4 class="underlined f-700 mt-30 mb-25 pb-25">Basic</h4>
-                                        </div>
-                                        <div class="price-text z-8">
-                                            <h1 class="f-700">
-                          <span>$</span>550<span>/cap</span>
-                        </h1>
-                                         
-                                        </div>
-                                        <a href="#" class="btn btn-round wide mt-10 z-8">Start Now</a>
-                                    </div>
-                                </div>
-                                <div class="col-lg-4 col-md-6 mt-md-30">
-                                    <div class="price-each relative img-lined text-center wow fadeInUp" data-wow-delay=".4s">
-                                        <div class="price-head z-8">
-                                            <div class="price-icon relative flex-center">
-                                                <img src="img/price/price2.png" alt="">
-                                            </div>
-                                            <h4 class="underlined f-700 mt-30 mb-25 pb-25">Business</h4>
-                                        </div>
-                                        <div class="price-text z-8">
-                                            <h1 class="f-700">
-                          <span>$</span>1000<span>/cap</span>
-                        </h1>
-                                            
-                                        </div>
-                                        <a href="#" class="btn btn-round wide mt-10 z-8">Start Now</a>
-                                    </div>
-                                </div>
-                                <div class="col-lg-4 col-md-6 mt-md-30">
-                                    <div class="price-each relative img-lined text-center wow fadeInUp" data-wow-delay=".4s">
-                                        <div class="price-head z-8">
-                                            <div class="price-icon relative flex-center">
-                                                <img src="img/price/price3.png" alt="">
-                                            </div>
-                                            <h4 class="underlined f-700 mt-30 mb-25 pb-25">Professional</h4>
-                                        </div>
-                                        <div class="price-text z-8">
-                                            <h1 class="f-700">
-                          <span>$</span>2000<span>/cap</span>
-                        </h1>
-                                            
-                                        </div>
-                                        <a href="#" class="btn btn-round wide mt-10 z-8">Start Now</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div id="yearly" class=" tab-pane fade">
-                            <div class="row">
-                                <div class="col-lg-4 col-md-6 mb-sm-30">
-                                    <div class="price-each relative img-lined text-center wow fadeInUp">
-                                        <div class="price-head z-8">
-                                            <div class="price-icon relative flex-center">
-                                                <img src="img/price/price1.png" alt="">
-                                            </div>
-                                            <h4 class="underlined f-700 mt-30 mb-25 pb-25">Basic Plan</h4>
-                                        </div>
-                                        <div class="price-text z-8">
-                                            <h1 class="f-700">
-                          <span>$</span>10,000<span>/cap</span>
-                        </h1>
-                                            
-                                        </div>
-                                        <a href="#" class="btn btn-round wide mt-10 z-8">Start Now</a>
-                                    </div>
-                                </div>
-                                <div class="col-lg-4 col-md-6">
-                                    <div class="price-each relative img-lined text-center active shadow-1 wow fadeInUp" data-wow-delay=".2s">
-                                        <div class="price-head z-8">
-                                            <div class="price-icon relative flex-center">
-                                                <img src="img/price/price2.png" alt="">
-                                            </div>
-                                            <h4 class="underlined f-700 mt-30 mb-25 pb-25">Business</h4>
-                                        </div>
-                                        <div class="price-text z-8">
-                                            <h1 class="f-700">
-                          <span>$</span>20,000 <span>/cap</span>
-                        </h1>
-                                            
-                                        </div>
-                                        <a href="#" class="btn btn-round-blue wide mt-10 z-8">Start Now</a>
-                                    </div>
-                                </div>
-                                <div class="col-lg-4 col-md-6 mt-md-30">
-                                    <div class="price-each relative img-lined text-center wow fadeInUp" data-wow-delay=".4s">
-                                        <div class="price-head z-8">
-                                            <div class="price-icon relative flex-center">
-                                                <img src="img/price/price3.png" alt="">
-                                            </div>
-                                            <h4 class="underlined f-700 mt-30 mb-25 pb-25">Professional</h4>
-                                        </div>
-                                        <div class="price-text z-8">
-                                            <h1 class="f-700">
-                          <span>$</span>100,000<span>/mo</span>
-                        </h1>
-                                           
-                                        </div>
-                                        <a href="#" class="btn btn-round wide mt-10 z-8">Start Now</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- Pricing area end -->
-
-    <!-- Testimonial area start -->
-    <section class="testimonials pt-95 pb-100" data-overlay="9" style="background-image: url('img/bg/bg-2.gif');">
-        <div class="container">
-            <div class="row">
-                <div class="col-xl-12">
-                    <div class="fancy-head text-center relative z-5 mb-40">
-                        <h5 class="line-head mb-15 ">
-                  <span class="line before "></span>
-                    Testimonials
-                  <span class="line after"></span>
-                </h5>
-                        <h1 class="white">We Love Our Clients</h1>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-xl-12">
-                    <div class="owl-carousel owl-theme testimonial-slider">
-                        <div class="item">
-                            <div class="testimonial-div text-center">
-                                <div class="client-image">
-                                    <img src="img/testimonial/client1.jpg" class="mt-10 mb-45 rounded-circle" alt="">
-                                </div>
-                                <div class="client-texts">
-                                    <h3 class="green mb-20 f-700 italic">“Best Business Service Ever”</h3>
-                                    <p class="white mb-20">giving our business a trial is what you will never regret a lot of people are no longer in lack of anything thanks to us,we are here to help and serve the nation, very soon BITCOIN is going to take over in the future that's the main reason we are training people and helping them to invest in there.</p>
-                                </div>selves.
-                                <div class="client-info">
-                                    <ul class="stars-rate" data-starsactive="5">
-                                        <li class=" text-center">
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star"></i>
-                                        </li>
-                                    </ul>
-                                    <h6 class="client-name green f-700">Fortune Steve</h6>
-                                 
-                                </div>
-                            </div>
-                        </div>
-                        <div class="item">
-                            <div class="testimonial-div text-center">
-                                <div class="client-image">
-                                    <img src="img/testimonial/client2.jpg" class="mt-10 mb-45 rounded-circle" alt="">
-                                </div>
-                                <div class="client-texts">
-                                    <h3 class="green mb-20 f-700 italic">“They're Exactly What I Had in Mind”</h3>
-                                    <p class="white mb-20">hello to who so ever is reading,BITCOIN has really helped a lot of people doing the COVID19 situation, let me say more than 9 million people so far, and got me to this place so i would advise you to invest with the company and see how it's going to change your life for good  </p>
-                                </div>
-                                <div class="client-info">
-                                    <ul class="stars-rate" data-starsactive="5">
-                                        <li class=" text-center">
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star"></i>
-                                        </li>
-                                    </ul>
-                                    <h6 class="client-name green f-700">Jessica David</h6>
-                               
-                                </div>
-                            </div>
-                        </div>
-                        <div class="item">
-                            <div class="testimonial-div text-center">
-                                <div class="client-image">
-                                    <img src="img/testimonial/client3.jpg" class="mt-10 mb-45 rounded-circle" alt="">
-                                </div>
-                                <div class="client-texts">
-                                    <h3 class="green mb-20 f-700 italic">“Beautiful and Functional”</h3>
-                                    <p class="white mb-20">hi guys,how you doing i guess you are okay,i just want to tell you BITCOIN have really helped me in many ways,you should give it a trial you can make up to $30,000 in just two days and i make more than a $60,000 monthly and i hope you give it a trial also and see what i'm talking about there is no harm in trying what you don't no give a trial and see for yourself...</p>
-                                </div>
-                                <div class="client-info">
-                                    <ul class="stars-rate" data-starsactive="5">
-                                        <li class=" text-center">
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star"></i>
-                                        </li>
-                                    </ul>
-                                    <h6 class="client-name green f-700">Lissa M</h6>
-                                   
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-xl-12">
-                    <div class="client-logos z-10 pt-60 mt-55">
-                        <div class="owl-carousel owl-theme client-logo-slide">
-                            <div class="item">
-                                <img src="img/clients/1.png" alt="">
-                            </div>
-                            <div class="item">
-                                <img src="img/clients/24351.png" alt="">
-                            </div>
-                            <div class="item">
-                                <img src="img/clients/2.png" alt="">
-                            </div>
-                            <div class="item">
-                                <img src="img/clients/4.png" alt="">
-                            </div>
-                            <div class="item">
-                                <img src="img/clients/5.png" alt="">
-                            </div>
-                            <div class="item">
-                                <img src="img/clients/6.png" alt="">
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- Testimonial area end -->
-
-    
-
-    <!-- cta area start -->
-    <section class="cta pt-50 pb-50" style="background-image: url('img/bg/bg_cta.jpg');" data-overlay="9">
-        <div class="container">
-            <div class="row align-items-center">
-                <div class="col-xl-4 col-lg-5 mb-md-20 text-center text-lg-left">
-                    <h3 class="z-5 white f-700 lh-18 wow fadeInLeft">What type of challenge are you facing? 
-              <span class="green italic">Let’s talk</span>
-            </h3>
-                </div>
-                <div class="col-xl-8 col-lg-7 text-center text-lg-right z-5">
-                    <a href="#" class="btn btn-square-white mr-20 mr-xs-00 d-block d-sm-inline-block mb-xs-15 wow fadeInUp">
-                        <i class="fas fa-envelope mr-15"></i>info@fxinvestor.net
-                    </a>
-                    <a href="tel:1234567890" class="btn btn-square-green d-block d-sm-inline-block blob-small wow fadeInUp">
-                        <i class="fas fa-phone mr-15"></i>+1 234 567 890
-                    </a>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- cta area end -->
-
-    <!-- Footer area start -->
-    <footer class="footer-area">
-        <div class="container">
-            <div class="row mb-sm-50 mb-xs-00">
-                <div class="col-lg-4 z-5">
-                    <div class="contact-area relative h-100 mr-lg-20 mr-md-00">
-                        <div class="footer-logo mb-35">
-                            <img src="img/logo/logo_footer.png" alt="">
-                        </div>
-                        <div class="contact-options mb-35">
-                            <ul>
-                                <li>
-                                    <i class="fas fa-map-marker-alt green"></i>3009  Hilltop Drive, LONDONDERRY, VT, Vermont.
-                                </li>
-                                <li>
-                                    <i class="fas fa-phone green"></i>+9147197184
-                                </li>
-                                <li>
-                                    <i class="fas fa-envelope green"></i>contact@fxinvestor.net
-                                </li>
-                            </ul>
-                        </div>
-                        <div class="social-links">
-                            <ul class="social-icons">
-                                <li>
-                                    <a href="#"><i class="fab fa-facebook-f"></i></a>
-                                </li>
-                                <li>
-                                    <a href="#"><i class="fab fa-twitter"></i></a>
-                                </li>
-                                <li>
-                                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                                </li>
-                                <li>
-                                    <a href="#"><i class="fab fa-google-plus-g"></i></a>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-sm-4">
-                    <div class="footer-links pt-85 pt-md-50 mb-sm-70">
-                        <h5 class="green f-700 mb-35">Quick Links</h5>
-                        <ul class="links-list">
-                            <li><a href="{% url 'main:home_view' %}" >Home</a></li>
-                            <li><a href="{% url 'main:about_view' %}">About Us</a></li>
-                            <li><a href="{% url 'main:contact_view' %}">Contact Us</a></li>
-                            
-                        </ul>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-sm-4">
-                    <div class="footer-links pt-85 pt-md-50 mb-sm-70">
-                        <h5 class="green f-700 mb-35">Our Services</h5>
-                        <ul class="links-list" style="color: #8E979F;">
-                            <li><a onclick="myFunction()">Investment planning</a></li>
-                            <li><a  onclick="myFunction()">Financial Planning</a></li>
-                            <li><a  onclick="myFunction()">Business Management</a></li>
-                            <li><a  onclick="myFunction()">Mutual Funds</a></li>
-                            <li><a  onclick="myFunction()">Markets Research</a></li>
-                            <li><a  onclick="myFunction()">Business Consulting</a></li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="col-lg-2 col-sm-4">
-                    <div class="footer-links pt-85 pt-md-50 mb-50" >
-                        <h5 class="green f-700 mb-35">Need Help?</h5>
-                        <ul class="links-list">
-                            <li><a href="{% url 'main:faq_view' %}">FAQS</a></li>
-                            <li><a href="#" onclick="myFunction()">Privacy</a></li>
-                            <li><a href="{% url 'main:home_view' %}" onclick="myFunction()">Policy</a></li>
-                            <li><a href="{% url 'main:home_view' %}" onclick="myFunction()">Support</a></li>
-                            <li><a href="{% url 'main:home_view' %}">Get a Quote</a></li>
-                            <li><a href="{% url 'main:home_view' %}">Contact us</a></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <section class="copyright pt-25 pb-25">
-            <div class="container">
-                <div class="row align-items-center">
-                    <div class="col-xl-8">
-                        <p class="mb-0 white">© Copyrights  FX Investor All rights reserved</p>
-                    </div>
-                    <div class="col-xl-4 text-right">
-                        <a href="#" class="btn scroll-btn f-right flex-center z-25 opacity-0">
-                            <i class="fas fa-arrow-up"></i>
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </footer>
-    <!-- Footer area end -->
-    <!-- ********************* -->
-    
-
-    <!-- Theme skins -->
-    <div class="color-theme transition-4">
-        <div class="theme-switch">
-            <span class="switch">
-              <i class="fas fa-sliders-h"></i>
-            </span>
-        </div>
-        <div class="theme-colors transition-4">
-            <h4>Theme Skins:</h4>
-            <ul class="theme-ul">
-                <li>
-                    <span class="each-color co1" data-color="css/color.css">
-                        <img src="img/co-1.png" alt="">
-                    </span>
-                </li>
-                <li>
-                    <span class="each-color co2" data-color="css/color2.css">
-                        <img src="img/co-2.png" alt="">
-                    </span>
-                </li>
-                <li>
-                    <span class="each-color co3" data-color="css/color3.css">
-                        <img src="img/co-3.png" alt="">
-                    </span>
-                </li>
-                <li>
-                    <span class="each-color co4" data-color="css/color4.css">
-                        <img src="img/co-4.png" alt="">
-                    </span>
-                </li>
-                <li>
-                    <span class="each-color co5" data-color="css/color5.css">
-                        <img src="img/co-5.png" alt="">
-                    </span>
-                </li>
-                <li>
-                    <span class="each-color co6" data-color="css/color6.css">
-                        <img src="img/co-6.png" alt="">
-                    </span>
-                </li>
+        <div class="row content">
+          <div class="col-lg-6" data-aos="fade-up" data-aos-delay="150">
+            <p>
+              All our activities are based on the interest to maximize the return for our partners, while minimizing the risks involved. Time is valuable, but it is even more valuable on the cryptocurrency market. Do not waste your time, join us!
+            </p>
+            <ul>
+              <li><i class="ri-check-double-line"></i> Simple signup</li>
+              <li><i class="ri-check-double-line"></i> Fast Deposit</li>
+              <li><i class="ri-check-double-line"></i> Easy Cashout</li>
             </ul>
-            <p class="fs-13 "><b>Note: </b>This will not change any image colors (logo, icon colors..etc)</p>
+          </div>
+          <div class="col-lg-6 pt-4 pt-lg-0" data-aos="fade-up" data-aos-delay="300">
+            <p>
+              We continuously research and integrate effective trading patterns. Our innovative approaches have attracted to us a number of top traders who demonstrate excellent long term performance. We also monitor the growing market of cryptocurrency, the list of the currencies used in work constantly extends. We invite you to join us on this journey! With investment support, we can not only expand our borders, but also increase returns. We have all the necessary tools, intellectual and temporal resources to manage the assets of our investors.
+            </p>
+            <a href="#" class="btn-learn-more">Signup</a>
+          </div>
         </div>
+
+      </div>
+    </section><!-- End About Us Section -->
+
+    <!-- ======= Counts Section ======= -->
+    <section id="counts" class="counts">
+      <div class="container">
+
+        <div class="row">
+          <div class="image col-xl-5 d-flex align-items-stretch justify-content-center justify-content-xl-start" data-aos="fade-right" data-aos-delay="150">
+            <img src="assets/img/counts-img.svg" alt="" class="img-fluid">
+          </div>
+
+          <div class="col-xl-7 d-flex align-items-stretch pt-4 pt-xl-0" data-aos="fade-left" data-aos-delay="300">
+            <div class="content d-flex flex-column justify-content-center">
+              <div class="row">
+                <div class="col-md-6 d-md-flex align-items-md-stretch">
+                  <div class="count-box">
+                    <i class="bi bi-emoji-smile"></i>
+                    <span data-purecounter-start="0" data-purecounter-end="2534" data-purecounter-duration="1" class="purecounter"></span>
+                    <p><strong>Happy Investors</strong></p>
+                  </div>
+                </div>
+
+                <div class="col-md-6 d-md-flex align-items-md-stretch">
+                  <div class="count-box">
+                    <i class="bx bx-dollar"></i>
+                    <span data-purecounter-start="0" data-purecounter-end="85345" data-purecounter-duration="1" class="purecounter"></span>
+                    <p><strong>Withdrawn</strong> </p>
+                  </div>
+                </div>
+
+                <div class="col-md-6 d-md-flex align-items-md-stretch">
+                  <div class="count-box">
+                    <i class="bi bi-clock"></i>
+                    <span data-purecounter-start="0" data-purecounter-end="18" data-purecounter-duration="1" class="purecounter"></span>
+                    <p><strong>Years of experience</strong></p>
+                  </div>
+                </div>
+
+                <div class="col-md-6 d-md-flex align-items-md-stretch">
+                  <div class="count-box">
+                    <i class="bi bi-award"></i>
+                    <span data-purecounter-start="0" data-purecounter-end="12" data-purecounter-duration="1" class="purecounter"></span>
+                    <p><strong>Awards</strong> </p>
+                  </div>
+                </div>
+              </div>
+            </div><!-- End .content-->
+          </div>
+        </div>
+
+      </div>
+    </section><!-- End Counts Section -->
+
+    <!-- ======= Services Section ======= -->
+    <section id="services" class="services">
+      <div class="container">
+
+        <div class="section-title" data-aos="fade-up">
+          <h2>Reliability</h2>
+          <p>BE ONE STEP AHEAD AND IMPROVE YOUR TRADING RESULTS WITH OUR INDUSTRY-LEADING TECHNOLOGY.</p>
+        </div>
+
+        <div class="row">
+          <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
+            <div class="icon-box" data-aos="fade-up" data-aos-delay="100">
+              <div class="icon"><i class="bl bi-shield-lock"></i></div>
+              <h4 class="title"><a href="">Privacy</a></h4>
+              <p class="description">Protection against third party attacks and full data encryption</p>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
+            <div class="icon-box" data-aos="fade-up" data-aos-delay="200">
+              <div class="icon"><i class="bx bx-tachometer"></i></div>
+              <h4 class="title"><a href="">Speed</a></h4>
+              <p class="description">You can buy cryptocurrency and digital assets in minutes, 24 hours in a day.
+              </p>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
+            <div class="icon-box" data-aos="fade-up" data-aos-delay="300">
+              <div class="icon"><i class="bx bx-sync"></i></div>
+              <h4 class="title"><a href="">Cash</a></h4>
+              <p class="description">Get your cashback within 20days of initial investment when not satisfied with the process</p>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
+            <div class="icon-box" data-aos="fade-up" data-aos-delay="400">
+              <div class="icon"><i class="bl bi-file-bar-graph"></i></div>
+              <h4 class="title"><a href="">Profitable</a></h4>
+              <p class="description">Performance statistics, including Requote, Slippage and Order Execution, checked and Reguated.</p>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section><!-- End Services Section -->
+
+    <!-- ======= More Services Section ======= -->
+    <section id="more-services" class="more-services">
+      <div class="container">
+
+        <div class="row">
+          <script type="text/javascript" src="https://files.coinmarketcap.com/static/widget/currency.js"></script><div class="coinmarketcap-currency-widget" data-currencyid="1" data-base="USD" data-secondary="" data-ticker="true" data-rank="true" data-marketcap="true" data-volume="true" data-statsticker="true" data-stats="USD"></div>
+        </div>
+
+      </div>
+    </section><!-- End More Services Section -->
+
+    <!-- ======= Features Section ======= -->
+    <section id="features" class="features">
+      <div class="container">
+
+        <div class="section-title" data-aos="fade-up">
+          <h2>Mining Calculator</h2>
+          <p>Access our miners calculator for pro miners only</p>
+        </div>
+
+        <!-- CryptoRival Calculator Widget BEGIN -->
+<script type="text/javascript" src="https://static.cryptorival.com/js/calcwidget.js"></script>
+<a id="cr-copyright" href="https://cryptorival.com/" target="_blank" rel="nofollow">Powered by Fugral FX</a>
+<script type="text/javascript">
+showCalc('bitcoin', '500', false, '0', 'f93', 'f93', 'f93', '4e9f15', '09c', 'f0ad4e', 'd9534f', 'f5f5f5', 'eee');
+</script>
+<!-- CryptoRival Calculator Widget END -->
+        </div>
+
+      </div>
+    </section><!-- End Features Section -->
+
+    <!-- ======= Testimonials Section ======= -->
+    <section id="testimonials" class="testimonials section-bg">
+      <div class="container">
+
+        <div class="section-title" data-aos="fade-up">
+          <h2>Testimonials</h2>
+          <p>Magnam dolores commodi suscipit eum quidem consectetur velit</p>
+        </div>
+
+        <div class="testimonials-slider swiper-container" data-aos="fade-up" data-aos-delay="100">
+          <div class="swiper-wrapper">
+
+            <div class="swiper-slide">
+              <div class="testimonial-wrap">
+                <div class="testimonial-item">
+                  <img src="assets/img/testimonials/testimonials-1.jpg" class="testimonial-img" alt="">
+                  <h3>Saul Goodman</h3>
+                  <h4>Employee</h4>
+                  <p>
+                    <i class="bx bxs-quote-alt-left quote-icon-left"></i>
+                    giving our business a trial is what you will never regret a lot of people are no longer in lack of anything thanks to us,we are here to help and serve the nation, very soon BITCOIN is going to take over in the future that's the main reason we are training people and helping them to invest in there
+                    <i class="bx bxs-quote-alt-right quote-icon-right"></i>
+                  </p>
+                </div>
+              </div>
+            </div><!-- End testimonial item -->
+
+            <div class="swiper-slide">
+              <div class="testimonial-wrap">
+                <div class="testimonial-item">
+                  <img src="assets/img/testimonials/testimonials-2.jpg" class="testimonial-img" alt="">
+                  <h3>Sara Wilsson</h3>
+                  <h4>Investor</h4>
+                  <p>
+                    <i class="bx bxs-quote-alt-left quote-icon-left"></i>
+                    hello to who so ever is reading,BITCOIN has really helped a lot of people doing the COVID19 situation, let me say more than 9 million people so far, and got me to this place so i would advise you to invest with the company and see how it's going to change your life for good  
+                    <i class="bx bxs-quote-alt-right quote-icon-right"></i>
+                  </p>
+                </div>
+              </div>
+            </div><!-- End testimonial item -->
+
+            <div class="swiper-slide">
+              <div class="testimonial-wrap">
+                <div class="testimonial-item">
+                  <img src="assets/img/testimonials/testimonials-3.jpg" class="testimonial-img" alt="">
+                  <h3>Jena Karlis</h3>
+                  <h4>Investor</h4>
+                  <p>
+                    <i class="bx bxs-quote-alt-left quote-icon-left"></i>
+                    hi guys,how you doing i guess you are okay,i just want to tell you BITCOIN have really helped me in many ways,you should give it a trial you can make up to $30,000 in just two days and i make more than a $60,000 monthly and i hope you give it a trial also and see what i'm talking about there is no harm in trying what you don't no give a trial and see for yourself...
+                    <i class="bx bxs-quote-alt-right quote-icon-right"></i>
+                  </p>
+                </div>
+              </div>
+            </div><!-- End testimonial item -->
+
+            
+
+            
+
+          </div>
+          <div class="swiper-pagination"></div>
+        </div>
+
+      </div>
+    </section><!-- End Testimonials Section -->
+
+   
+    <!-- ======= Team Section ======= -->
+    <section id="team" class="team section-bg">
+      <div class="container">
+
+        <div class="section-title" data-aos="fade-up">
+          <h2>Team</h2>
+          <p>Necessitatibus eius consequatur ex aliquid fuga eum quidem</p>
+        </div>
+
+        <div class="row">
+
+          <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
+            <div class="member" data-aos="fade-up" data-aos-delay="100">
+              <div class="member-img">
+                <img src="assets/img/team/team-1.jpg" class="img-fluid" alt="">
+                <div class="social">
+                  <a href=""><i class="bi bi-twitter"></i></a>
+                  <a href=""><i class="bi bi-facebook"></i></a>
+                  <a href=""><i class="bi bi-instagram"></i></a>
+                  <a href=""><i class="bi bi-linkedin"></i></a>
+                </div>
+              </div>
+              <div class="member-info">
+                <h4>Walter White</h4>
+                <span>Chief Executive Officer</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
+            <div class="member" data-aos="fade-up" data-aos-delay="200">
+              <div class="member-img">
+                <img src="assets/img/team/team-2.jpg" class="img-fluid" alt="">
+                <div class="social">
+                  <a href=""><i class="bi bi-twitter"></i></a>
+                  <a href=""><i class="bi bi-facebook"></i></a>
+                  <a href=""><i class="bi bi-instagram"></i></a>
+                  <a href=""><i class="bi bi-linkedin"></i></a>
+                </div>
+              </div>
+              <div class="member-info">
+                <h4>Sarah Jhonson</h4>
+                <span>Product Manager</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
+            <div class="member" data-aos="fade-up" data-aos-delay="300">
+              <div class="member-img">
+                <img src="assets/img/team/team-3.jpg" class="img-fluid" alt="">
+                <div class="social">
+                  <a href=""><i class="bi bi-twitter"></i></a>
+                  <a href=""><i class="bi bi-facebook"></i></a>
+                  <a href=""><i class="bi bi-instagram"></i></a>
+                  <a href=""><i class="bi bi-linkedin"></i></a>
+                </div>
+              </div>
+              <div class="member-info">
+                <h4>William Anderson</h4>
+                <span>CTO</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
+            <div class="member" data-aos="fade-up" data-aos-delay="400">
+              <div class="member-img">
+                <img src="assets/img/team/team-4.jpg" class="img-fluid" alt="">
+                <div class="social">
+                  <a href=""><i class="bi bi-twitter"></i></a>
+                  <a href=""><i class="bi bi-facebook"></i></a>
+                  <a href=""><i class="bi bi-instagram"></i></a>
+                  <a href=""><i class="bi bi-linkedin"></i></a>
+                </div>
+              </div>
+              <div class="member-info">
+                <h4>Amanda Jepson</h4>
+                <span>Accountant</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section><!-- End Team Section -->
+
+  
+
+    <!-- ======= F.A.Q Section ======= -->
+    <section id="faq" class="faq">
+      <div class="container">
+
+        <div class="section-title" data-aos="fade-up">
+          <h2>Frequently Asked Questions</h2>
+        </div>
+
+        <div class="row faq-item d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="100">
+          <div class="col-lg-5">
+            <i class="ri-question-line"></i>
+            <h4>What is cryptocurrency??</h4>
+          </div>
+          <div class="col-lg-7">
+            <p>
+              Bitcoin is a cryptocurrency. It is a decentralized digital currency without a central bank or single administrator that can be sent from 
+              user to user on the peer-to-peer bitcoin network without the need for intermediaries.
+            </p>
+          </div>
+        </div><!-- End F.A.Q Item-->
+
+        
+
+        <div class="row faq-item d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="300">
+          <div class="col-lg-5">
+            <i class="ri-question-line"></i>
+            <h4>How can i Register New Account?</h4>
+          </div>
+          <div class="col-lg-7">
+            <p>
+              To register a new account, simply click on the “Sign Up” link and fill out 
+              the required information.
+            </p>
+          </div>
+        </div><!-- End F.A.Q Item-->
+
+        <div class="row faq-item d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="400">
+          <div class="col-lg-5">
+            <i class="ri-question-line"></i>
+            <h4>How do i request for withdrawal?</h4>
+          </div>
+          <div class="col-lg-7">
+            <p>
+              You can request a withdrawal by clicking the “Withdraw” button in the member's area and entering the amount you want to withdraw.
+            </p>
+          </div>
+        </div><!-- End F.A.Q Item-->
+
+        <div class="row faq-item d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="500">
+          <div class="col-lg-5">
+            <i class="ri-question-line"></i>
+            <h4>Can i Change Payment Address?</h4>
+          </div>
+          <div class="col-lg-7">
+            <p>
+              You can change your payment withdrawal address by clicking the “Settings” button on the menu after logging in to your account. Enter your new payment address and save the changes. 
+            </p>
+          </div>
+        </div><!-- End F.A.Q Item-->
+
+      </div>
+    </section><!-- End F.A.Q Section -->
+
+    <!-- ======= Contact Section ======= -->
+    <section id="contact" class="contact">
+      <div class="container">
+
+        <div class="section-title" data-aos="fade-up">
+          <h2>Contact Us</h2>
+        </div>
+
+        <div class="row">
+
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+            <div class="contact-about">
+              <h3>FRUGAL FX</h3>
+              <p>Safe Crypto Investment.</p>
+              <div class="social-links">
+                <a href="#" class="twitter"><i class="bi bi-twitter"></i></a>
+                <a href="#" class="facebook"><i class="bi bi-facebook"></i></a>
+                <a href="#" class="instagram"><i class="bi bi-instagram"></i></a>
+                <a href="#" class="linkedin"><i class="bi bi-linkedin"></i></a>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-6 mt-4 mt-md-0" data-aos="fade-up" data-aos-delay="200">
+            <div class="info">
+              <div>
+                <i class="ri-map-pin-line"></i>
+                <p>A108 Adam Street<br>New York, NY 535022</p>
+              </div>
+
+              <div>
+                <i class="ri-mail-send-line"></i>
+                <p>info@frugalfx.com</p>
+              </div>
+
+              <div>
+                <i class="ri-phone-line"></i>
+                <p>+1 5589 55488 55s</p>
+              </div>
+
+            </div>
+          </div>
+
+          <div class="col-lg-5 col-md-12" data-aos="fade-up" data-aos-delay="300">
+            <form action="forms/contact.php" method="post" role="form" class="php-email-form">
+              <div class="form-group">
+                <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" required>
+              </div>
+              <div class="form-group">
+                <input type="email" class="form-control" name="email" id="email" placeholder="Your Email" required>
+              </div>
+              <div class="form-group">
+                <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject" required>
+              </div>
+              <div class="form-group">
+                <textarea class="form-control" name="message" rows="5" placeholder="Message" required></textarea>
+              </div>
+              <div class="my-3">
+                <div class="loading">Loading</div>
+                <div class="error-message"></div>
+                <div class="sent-message">Your message has been sent. Thank you!</div>
+              </div>
+              <div class="text-center"><button type="submit">Send Message</button></div>
+            </form>
+          </div>
+
+        </div>
+
+      </div>
+    </section><!-- End Contact Section -->
+
+  </main><!-- End #main -->
+
+  <!-- ======= Footer ======= -->
+  <footer id="footer">
+    <div class="container">
+      <div class="row d-flex align-items-center">
+        <div class="col-lg-6 text-lg-left text-center">
+          <div class="copyright">
+            &copy; Copyright <strong>   <fieldset>Frugal FX</fieldset></strong>. All Rights Reserved
+          </div>
+          <div class="credits">
+            
+            Designed by <a >Hack' Initiative</a>
+          </div>
+        </div>
+        <div class="col-lg-6">
+          <nav class="footer-links text-lg-right text-center pt-2 pt-lg-0">
+            <a href="#intro" class="scrollto">Home</a>
+            <a href="#about" class="scrollto">About</a>
+            <a href="#">Privacy Policy</a>
+            <a href="#">Terms of Use</a>
+          </nav>
+        </div>
+      </div>
     </div>
-    <!-- Theme skins -->
-    <!-- JS Files -->
-    <script>
-        function myFunction() {
-          alert("Request Denied, Site Under maintenance!");
-        }
-        </script>
-    <script src="js/modernizr-3.5.0.min.js"></script>
-    <script src="js/jquery-1.12.4.min.js"></script>
-    <script src="js/bootstrap.bundle.min.js"></script>
-    <script src="js/owl.carousel.min.js"></script>
-    <script src="js/jquery.magnific-popup.min.js"></script>
-    <script src="js/jquery.nice-select.min.js"></script>
-    <script src="../../cdnjs.cloudflare.com/ajax/libs/waypoints/2.0.3/waypoints.min.js"></script>
-    <script src="js/jquery.counterup.min.js"></script>
-    <script src="js/jquery.countdown.min.js"></script>
-    <script src="js/lightslider.min.js"></script>
-    <script src="js/wow.min.js"></script>
-    <script src="js/isotope.pkgd.min.js"></script>
-    <script src="js/jquery.meanmenu.min.js"></script>
-    <script src="js/main.js"></script>
-    <!-- JS Files end -->
+  </footer><!-- End Footer -->
+
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
+  <script src="assets/vendor/purecounter/purecounter.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+
+  <!-- Template Main JS File -->
+  <script src="assets/js/main.js"></script>
+
 </body>
 
 </html>
