@@ -443,9 +443,17 @@ section {
 }
 
 .section-bg {
-  background-color: #f7fbfe;
+  background-image: linear-gradient(to bottom, rgba(69, 173, 243, 0.836), rgba(14, 162, 248, 0.73)),url(/assets/img/hero.gif);
+    background-size: cover;
+    color: white;
+   
 }
-
+.section-bg2 {
+  background-image: linear-gradient(to bottom, rgba(69, 173, 243, 0.836), rgba(14, 162, 248, 0.73)),url(/assets/img/bg-2.gif);  
+    background-size: cover;
+    color: white;
+    
+}
 .section-title {
   text-align: center;
   padding-bottom: 30px;
@@ -482,42 +490,44 @@ section {
 /*--------------------------------------------------------------
 # Clients
 --------------------------------------------------------------*/
-.clients {
-  background: #f3f9fd;
-  padding: 10px 0;
-  text-align: center;
-}
-
-.clients .col-lg-2 {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.clients img {
-  width: 50%;
-  filter: grayscale(100);
-  transition: all 0.4s ease-in-out;
-  display: inline-block;
-  padding: 10px 0;
-}
-
-.clients img:hover {
-  filter: none;
-  transform: scale(1.1);
-}
-
-@media (max-width: 768px) {
-  .clients img {
-    width: 40%;
+<style>
+  .Marquee-box {
+     position: relative;
+     display: inline-block;
+     width: 500px;
+     height: 80px;
   }
-}
+  .MyMarquee {
+     text-align: center;
+     font-weight: bold;
+     width: 100%;
+     height: 100%;
+     font-size: 25px;
+     color: #FFFFFF;
+     font-family: Arial, Helvetica, sans-serif;
+     vertical-align: middle;
+     -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+             box-sizing: border-box;
+     background-color: #FFFFFF;
 
-@media (max-width: 575px) {
-  .clients img {
-    width: 30%;
   }
-}
+  .MyMarquee div {
+     display: inline-block;
+     vertical-align: middle;
+  }
+  .MyMarquee a, .MyMarquee img {
+     display: inline-block;
+     text-decoration: underline;
+     color: #FFFFFF;
+     vertical-align: middle;
+  }
+</style>
+
+
+
+
+
 
 /*--------------------------------------------------------------
 # About Us
@@ -877,7 +887,7 @@ section {
 }
 
 .testimonials .testimonial-item .quote-icon-left, .testimonials .testimonial-item .quote-icon-right {
-  color: #e1f0fa;
+  color: #020202;
   font-size: 26px;
 }
 
@@ -913,7 +923,7 @@ section {
 }
 
 .testimonials .swiper-pagination .swiper-pagination-bullet-active {
-  background-color: #3498db;
+  background-color: #edffe8;
 }
 
 @media (max-width: 767px) {
