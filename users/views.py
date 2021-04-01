@@ -292,7 +292,7 @@ class VerifyView(LoginRequiredMixin , View  ):
 				
 				
 #Dashboard view
-@login_required( login_url = '/users/login/' , redirect_field_name = 'redirect_to' )
+# @login_required( login_url = '/users/login/' , redirect_field_name = 'redirect_to' )
 def dashboard_view(request):
 	
 	context = {  'msg' : 'Welcome, please select a coin of your choice to make a deposit.' , 'color' : 'blue' }
