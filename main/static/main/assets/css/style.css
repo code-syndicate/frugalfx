@@ -475,15 +475,13 @@ section {
 }
 
 .section-bg {
-    background-color: linear-gradient(to bottom, rgba(69, 173, 243, 0.836));
-    background-image: url(../img/hero.gif);
+    background-image: linear-gradient(to bottom, rgba(69, 173, 243, 0.836), rgba(14, 162, 248, 0.73)), url(../img/hero.gif);
     background-size: cover;
     color: white;
 }
 
 .section-bg2 {
-    background-color: linear-gradient(to bottom, rgba(69, 173, 243, 0.836));
-    background-image: url(../img/bg-2.gif);
+    background-image: linear-gradient(to bottom, rgba(69, 173, 243, 0.836), rgba(14, 162, 248, 0.73)), url(../img/bg-2.gif);
     background-size: cover;
     color: white;
 }
