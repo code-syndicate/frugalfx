@@ -9,10 +9,10 @@ from main.models import *
 from main.admin import *
 
 class AdminSite1( AdminSite ):
-	site_header = 'Fx Investor Administration'
-	site_title = 'Fx Investor Admin'
-	index_title = 'Manage FxInvestor '
-	site_url = 'http://fxinvestor.net/'
+	site_header = 'FrugalFx Administration'
+	site_title = 'FrugalFx Admin'
+	index_title = 'Manage FrugalFx '
+	site_url = 'http://frugalfx.com/'
 
 
 

@@ -9,7 +9,7 @@ urlpatterns = [
     #path('admin/', admin.site.urls),
 
 	
-    path('fx-admin/', admin_site1.urls),
+    path('frugalfx-admin/', admin_site1.urls),
 
 	path( 'users/' , include('users.urls') ),
 	
