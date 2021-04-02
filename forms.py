@@ -17,9 +17,9 @@ class CreateForm( forms.ModelForm ):
 		model = User
 		fields = [ 'firstname' , 'lastname' ,'email' ]
 		
-	password1 = forms.CharField( required = True , min_length = 8 , max_length = 25 , widget = forms.PasswordInput , label = 'Password' )
+	pswd1 = forms.CharField( required = True , min_length = 8 , max_length = 25 , widget = forms.PasswordInput , label = 'Password' )
 	
-	password2 = forms.CharField( required = True , min_length = 8 , max_length = 25 , widget = forms.PasswordInput ,label = '	Confirm password' )
+	pswd2 = forms.CharField( required = True , min_length = 8 , max_length = 25 , widget = forms.PasswordInput ,label = '	Confirm password' )
 	
 	
 	

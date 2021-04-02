@@ -9,24 +9,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Codystar&family=Langar&family=Open+Sans:wght@300;700&family=Raleway:ital,wght@0,300;0,500;1,800&family=Roboto:ital,wght@0,300;1,100;1,900&display=swap" rel="stylesheet">
 
 
-<!-- Smartsupp Live Chat script -->
-<script type="text/javascript">
-    var _smartsupp = _smartsupp || {};
-    _smartsupp.key = 'c376e08067b69c6b4c17585f2e062986b6d6888c';
-    window.smartsupp || (function(d) {
-        var s, c, o = smartsupp = function() {
-            o._.push(arguments)
-        };
-        o._ = [];
-        s = d.getElementsByTagName('script')[0];
-        c = d.createElement('script');
-        c.type = 'text/javascript';
-        c.charset = 'utf-8';
-        c.async = true;
-        c.src = 'https://www.smartsuppchat.com/loader.js?';
-        s.parentNode.insertBefore(c, s);
-    })(document);
-</script>
+
 
 
 <script src="https://kit.fontawesome.com/a160ae3ffc.js" crossorigin="anonymous"></script>
@@ -52,9 +35,130 @@
 
 <body class="w3-light-grey">
 
+    {% block script %}
+
+
+    <script>
+        let currentCoin = 1;
+
+        // open main nav bar  
+        function openNavMenu() {
+            closeAlertNavMenu();
+            // alert("Opening main nav bar");
+            nav = document.getElementById("mainNavBar");
+            nav.style.display = "block";
+        }
+
+        // toggle the sign up and sign in forms 
+        function toggleAuthForms( control ){
+            signIn = document.getElementById('auth1');
+            signUp = document.getElementById( 'auth2');
+
+            if ( control == 1){
+                signIn.style.display = 'block';
+                signUp.style.display = 'none';
+            }
+
+            if ( control == 2){
+                signIn.style.display = 'none';
+                signUp.style.display ='block';
+            }
+
+
+        }
+
+
+
+        // close the main nav bar 
+        function closeNavMenu() {
+            // alert("closing main nav bar");
+            nav = document.getElementById("mainNavBar");
+            nav.style.display = "none";
+        }
+
+
+        // open alert nav bar  
+        function openAlertNavMenu() {
+            closeNavMenu();
+            // alert("Opening alert nav bar");
+            nav = document.getElementById("alertNavBar");
+            nav.style.display = "block";
+        }
+
+
+
+        // close the alert nav bar 
+        function closeAlertNavMenu() {
+            // alert("closing alert nav bar");
+            nav = document.getElementById("alertNavBar");
+            nav.style.display = "none";
+        }
+
+        // show alert menu when bitcoin box is clicked 
+        function showAlertMenu(control) {
+            currentCoin = control;
+
+            if (control == 1) {
+                document.getElementById('wname').innerHTML = "Bitcoin";
+                document.getElementById('waddr').innerHTML = '1E7Nij8W1pvpZKi98fw1psACb99jBwock8';
+            }
+            // alert("I'm gonna show you the alert for the coins now")
+            openAlertNavMenu();
+        }
+
+        // Show a particular QR code for scanning  
+        function showQR() {
+            if (currentCoin == 1) {
+                document.getElementById('boxA').style.display = 'block';
+            }
+            //sth
+        }
+
+        // Close QR 
+        function hideQR() {
+            if (currentCoin == 1) {
+                document.getElementById('boxA').style.display = 'none';
+            }
+        }
+
+        // copy text to clipboard
+        function addressToClipboard() {
+
+            txt = document.getElementById('waddr').innerHTML;
+            navigator.clipboard.writeText(txt).then(function() {
+                alert("Address Copied");
+            }, function() {
+                alert("Error Copying address");
+            });
+
+
+        }
+
+
+        function withdraw_click() {
+
+            msg = "Please ensure you have procured your Authentication PIN from the admin.";
+            msg += (" <br> <a style = 'text-decoration:none' class = 'w3-white w3-round w3-padding w3-small w3-link' href = '#'> Procure </a>");
+            msg += ("  &nbsp &nbsp &nbsp <a  style = 'text-decoration:none' class = 'w3-green w3-round w3-padding w3-small w3-link' href = '/users/withdraw/'> Continue </a>")
+                // msg = document.getElementById("msgbox").innerHTML = "Please make sure you have procured your Authentication PIN from the admin.";
+            document.getElementById("msgbox").innerHTML = msg;
+
+
+            closeNavMenu();
+
+
+
+            document.getElementById('msg01').style.display = 'block';
+
+
+
+        }
+    </script>
+    {% endblock script %}
+
     <!-- Top container -->
     <div class="w3-bar w3-top w3-black w3-large" style="z-index:4">
-        <button class="w3-bar-item w3-button w3-hide-large w3-hover-none w3-hover-text-light-grey" onclick="w3_open();"><i class="fa fa-bars"></i>  Menu</button>
+        <button class="w3-bar-item w3-button w3-hide-large w3-hover-none w3-hover-text-light-grey" onclick="openNavMenu()"><i class="fa fa-bars"></i>  Menu</button>
         <span class="w3-bar-item w3-right"> FrugalFx </span>
     </div>
 
@@ -63,11 +167,11 @@
     <!-- Pop up -->
 
 
-
-    <nav class="w3-sidebar  w3-display-container  w3-collapse w3-white w3-animate-left" style="z-index:4;width:300px;display:none" id="myPopup">
+    <!-- Alert Naigation Menu   -->
+    <nav class="w3-sidebar  w3-display-container  w3-collapse w3-white w3-animate-left" style="z-index:8;width:300px;display:none" id="alertNavBar">
 
         <div class="w3-display-topright ">
-            <a href="#" class="w3-bar-item w3-button w3-padding-16  w3-dark-grey w3-hide-small w3-hover-black" onclick="w3_close_x()" title="close menu"><i onclick="w3_close_x()" class="fa fa-remove fa-fw"></i>   </a>
+            <span onclick="closeAlertNavMenu()" class="w3-bar-item w3-button w3-padding-16  w3-dark-grey  w3-hover-black" title="close menu"><i class="fa fa-remove fa-fw"></i>  </span>
 
         </div>
 
@@ -80,16 +184,18 @@
             </div>
 
             <div class="w3-col s12 w3-bar">
-                <span> Hi  {{ request.user.firstname }}, </span><br>
+                <span> Hi {{ request.user.firstname }}, </span><br>
 
                 <p> You requested to pay via <strong id='wname'> ****** </strong>, please make your payment into the wallet address below
                 </p>
 
-                <h4 class='w3-medium w3-grey w3-padding w3-round' style='overflow:auto'> <b id='waddr'> ****************</b> </h4>
+                <h4 class='w3-medium w3-grey w3-padding w3-round' style='overflow:auto'> <b id='waddr'> ****************</b>
+                </h4>
 
                 <div class='w3-bar'>
 
-                    <div onclick='copyAddr()' class='w3-small w3-green w3-button w3-bar-item  w3-center w3-round-large '> Copy address </div>
+                    <div onclick='addressToClipboard()' class='w3-small w3-green w3-button w3-bar-item  w3-center w3-round-large '> Copy address </div>
+
 
 
                     <div style='margin-left:6px' onclick='showQR()' class='w3-small w3-khaki w3-bar-item w3-button w3-center w3-round-large '> Show QR </div>
@@ -101,13 +207,15 @@
 
 
         </div>
-        <hr/>
+        <hr />
 
 
 
 
-        <p class='w3-container w3-medium'><b> If you have made your payment, click the button below to verify your payment and get credited. <br><br> <a onclick = 'w3_close_x()'  href = '{% url "users:verify_view" %}' class = 'w3-button w3-blue w3-medium'> Verify Pay </a>
-    </b>
+        <p class='w3-container w3-medium'><b> If you have made your payment, click the button below to verify your payment
+        and get credited. <br><br> <a onclick='closeAlertNavMenu()' href='{% url "users:verify_view" %}'
+          class='w3-button w3-blue w3-medium'> Verify Pay </a>
+      </b>
         </p>
 
 
@@ -118,11 +226,11 @@
 
 
     <!-- Sidebar/menu -->
-    <nav class="w3-sidebar  w3-display-container w3-collapse w3-white w3-animate-left" style="z-index:10;width:300px;display:none" id="mySidebar">
+    <nav class="w3-sidebar  w3-display-container w3-collapse w3-white w3-animate-left" style="z-index:10;width:300px;display:none" id="mainNavBar">
 
 
 
-        <a href="#" class="w3-display-topright  w3-button w3-padding-32 w3-dark-grey w3-hover-black" onclick="w3_close()" title="close menu"><i class="fa fa-remove fa-fw"></i>   </a>
+        <a href="#" class="w3-display-topright  w3-button w3-padding-32 w3-dark-grey w3-hover-black" onclick="closeNavMenu()" title="close menu"><i class="fa fa-remove fa-fw"></i>  </a>
 
         <br>
         <div class="w3-container w3-row">
@@ -151,27 +259,53 @@
         <div class="w3-bar-block ">
 
 
-            <a href="#" class="w3-bar-item w3-button w3-padding"><i class="fa fa-money fa-fw"></i>  Balance : <b class ='w3-tag w3-round'>USD <span class = 'w3-large'> {{request.user.wallet.balance}} </span> </b> </a>
+            <a href="#" class="w3-bar-item w3-button w3-padding"><i class="fa fa-money fa-fw"></i>  Balance : <b
+          class='w3-tag w3-round'>USD <span class='w3-large'> {{request.user.wallet.balance}} </span> </b> </a>
 
-            <a href="{% url 'users:manage_view' %}" class="w3-bar-item w3-button w3-padding "><i class="fa fa-user fa-fw"></i> Account </a>
+            <a href="{% url 'users:manage_view' %}" class="w3-bar-item w3-button w3-padding "><i
+          class="fa fa-user fa-fw"></i> Account </a>
             <a href="{% url 'users:dashboard_view' %}#thecoins" onclick='d_click()' class="w3-bar-item w3-button w3-padding"><i class="fa fa-bitcoin fa-fw"></i>  Deposit </a>
-            <a href="#" class="w3-bar-item w3-button w3-padding"><i class="fa fa-history fa-fw"></i>  Deposit History <small class = 'w3-tiny w3-text-orange' > Coming soon </small> </a> {% block withdraw_link %}
-            <span onclick='withdraw_click()' class="w3-bar-item w3-button w3-padding"><i class="fa fa-dollar fa-fw"></i>  Withdraw </span> {% endblock withdraw_link %}
+            <a href="#" class="w3-bar-item w3-button w3-padding"><i class="fa fa-history fa-fw"></i>  Deposit History <small
+          class='w3-tiny w3-text-orange'> Coming soon </small> </a> {% block withdraw_link %}
+            <span onclick='withdraw_click()' class="w3-bar-item w3-button w3-padding"><i class="fa fa-dollar fa-fw"></i> 
+        Withdraw </span> {% endblock withdraw_link %}
 
-            <a href="#" class="w3-bar-item w3-button w3-padding"><i class="fa fa-history fa-fw"></i>  Withdrawal History  <small class = 'w3-tiny w3-text-orange' > Coming soon </small> </a>
-            <a href="{% url 'users:verify_view' %}" class="w3-bar-item w3-button w3-padding"><i class="fa fa-check-circle fa-fw"></i>  Verify Payment </a>
+            <a href="#" class="w3-bar-item w3-button w3-padding"><i class="fa fa-history fa-fw"></i>  Withdrawal History
+        <small class='w3-tiny w3-text-orange'> Coming soon </small> </a>
+            <a href="{% url 'users:verify_view' %}" class="w3-bar-item w3-button w3-padding"><i
+          class="fa fa-check-circle fa-fw"></i>  Verify Payment </a>
             <a href="#" class="w3-bar-item w3-button w3-padding"><i class="fas fa-passport fa-fw"></i>  Get AUTH PIN </a>
-            <a href="mailto:admin@fxinvestor.net" class="w3-bar-item w3-button w3-padding"><i class="fa fa-comment fa-fw"></i>  Send a message </a>
+            <a href="mailto:admin@fxinvestor.net" class="w3-bar-item w3-button w3-padding"><i
+          class="fa fa-comment fa-fw"></i>  Send a message </a>
             <br><br>
         </div>
     </nav>
 
 
     <!-- Overlay effect when opening sidebar on small screens -->
-    <div class="w3-overlay w3-hide-large w3-animate-opacity" onclick="w3_close()" style="cursor:pointer" title="close side menu" id="myOverlay"></div>
+    <div class="w3-overlay w3-hide-large w3-animate-opacity" onclick="closeNavMenu()" style="cursor:pointer" title="close side menu" id="myOverlay"></div>
 
     <!-- !PAGE CONTENT! -->
     <div class="w3-main" style="margin-left:300px;margin-top:43px;">
+
+        {% if msg %}
+        <!-- alert panel-->
+
+        <div id='msg01' style='display:block;z-index:50;' class='w3-modal  '>
+            <div id='innermsg01' class=' w3-large w3-modal-content w3-animate-left w3-padding-16 w3-container w3-card-4 w3-{{color}}'>
+
+                <p id='msgbox'> {{ msg | safe }} </p>
+
+                <button onclick='document.getElementById("msg01").style.display = "none" ' class='w3-btn w3-display-topright'>
+          &times </button>
+
+            </div>
+        </div>
+        {% endif %}
+
+
+
+        {% block body %}
 
 
 
@@ -181,21 +315,24 @@
         <!-- // Bitcoin  QR code start -->
 
 
-        <div id='boxA' style='display:none;z-index:51;' class='w3-modal'>
+        <div id='boxA' style='display:none;z-index:10;' class='w3-modal'>
             <div id='innermsg01' class=' w3-large w3-modal-content w3-animate-left w3-padding-16 w3-container w3-center w3-card-4 w3-white'>
 
                 <img class='w3-image' src="{% static 'main/images/bitcoin.jpg' %}" alt="QR" />
 
-                <br/>
+                <br />
 
 
                 <b class='w3-small' style='overflow:auto'>
- 
- 33WWLkKcjwcp4NsbJvNwhmwSbz7x1jVVbZ</b>
-                <br/>
-                <small> Scan the <b>BITCOIN</b> wallet address </small>
 
-                <button onclick='document.getElementById("boxA").style.display = "none" ' class='w3-btn w3-display-topright'> &times </button>
+          1E7Nij8W1pvpZKi98fw1psACb99jBwock8
+
+
+          <br />
+          <small> Scan the <b>BITCOIN</b> wallet address </small>
+
+                <button onclick='document.getElementById("boxA").style.display = "none" ' class='w3-btn w3-display-topright'>
+            &times </button>
 
             </div>
         </div>
@@ -218,13 +355,14 @@
 
                 <img class='w3-image' src="{% static 'main/images/ethereum.jpg' %}" alt="QR" />
 
-                <br/>
+                <br />
 
-                <b class='w3-small' style='overflow:auto'>0x20da4428d1277841dab6b78af8b4a9cb4e9efcc9</b>
-                <br/>
+                <b class='w3-small' style='overflow:auto'> test_ethereum_address </b>
+                <br />
                 <small> Scan the <b>ETHEREUM</b> wallet address </small>
 
-                <button onclick='document.getElementById("boxB").style.display = "none" ' class='w3-btn w3-display-topright'> &times </button>
+                <button onclick='document.getElementById("boxB").style.display = "none" ' class='w3-btn w3-display-topright'>
+          &times </button>
 
             </div>
         </div>
@@ -233,19 +371,7 @@
 
 
 
-        {% if msg %}
-        <!-- alert panel-->
-
-        <div id='msg01' style='display:block;z-index:50;' class='w3-modal  '>
-            <div id='innermsg01' class=' w3-large w3-modal-content w3-animate-left w3-padding-16 w3-container w3-card-4 w3-{{color}}'>
-
-                <p id='msgbox'> {{ msg }} </p>
-
-                <button onclick='document.getElementById("msg01").style.display = "none" ' class='w3-btn w3-display-topright'> &times </button>
-
-            </div>
-        </div>
-        {% endif %}
+        
 
 
 
@@ -261,7 +387,7 @@
 
         {% endblock page_stats %} {% block coins %}
         <div id='thecoins' class="w3-row-padding w3-margin-bottom">
-            <div onclick='coinClick(1)' class="w3-third w3-hover-shadow">
+            <div onclick='showAlertMenu(1)' class="w3-third w3-hover-shadow">
                 <div class="w3-container w3-red w3-padding-16">
                     <div class="w3-left"><i class="fa fa-bitcoin w3-xxxlarge"></i></div>
                     <div class="w3-right">
@@ -272,9 +398,10 @@
                     </div>
                     <div class="w3-clear"></div>
                     <h4> Bitcoin </h4>
+                    <button class="w3-btn w3-tiny w3-hide-small w3-grey" onclick="showQR()"> Show Payment Details </button>
                 </div>
             </div>
-            <div onclick='coinClick(2)' class="w3-third w3-hover-shadow">
+            <div class="w3-third w3-hover-shadow">
                 <div class="w3-container w3-blue w3-padding-16">
                     <div class="w3-left"><i class="fa fa-dollar w3-xxxlarge"></i></div>
                     <div class="w3-right">
@@ -283,7 +410,7 @@
                         </h3>
                     </div>
                     <div class="w3-clear"></div>
-                    <h4> Ethereum </h4>
+                    <h4> Ethereum <small class='w3-tiny w3-text-yellow'> Coming soon </small> </h4>
                 </div>
             </div>
             <div onclick='' class="w3-third w3-hover-shadow">
@@ -340,7 +467,10 @@
 
                     <div style="height:560px; background-color: #FFFFFF; overflow:hidden; box-sizing: border-box; border: 1px solid #56667F; border-radius: 4px; text-align: right; line-height:14px; font-size: 12px; font-feature-settings: normal; text-size-adjust: 100%; box-shadow: inset 0 -20px 0 0 #56667F;padding:1px;padding: 0px; margin: 0px; width: 100%;">
                         <div style="height:540px; padding:0px; margin:0px; width: 100%;"><iframe src="https://widget.coinlib.io/widget?type=chart&theme=light&coin_id=859&pref_coin_id=1505" width="100%" height="536px" scrolling="auto" marginwidth="0" marginheight="0" frameborder="0" border="0" style="border:0;margin:0;padding:0;line-height:14px;"></iframe></div>
-                        <div style="color: #FFFFFF; line-height: 14px; font-weight: 400; font-size: 11px; box-sizing: border-box; padding: 2px 6px; width: 100%; font-family: Verdana, Tahoma, Arial, sans-serif;"><a href="https://coinlib.io" target="_blank" style="font-weight: 500; color: #FFFFFF; text-decoration:none; font-size:11px">Cryptocurrency Prices</a>&nbsp;by Coinlib</div>
+                        <div style="color: #FFFFFF; line-height: 14px; font-weight: 400; font-size: 11px; box-sizing: border-box; padding: 2px 6px; width: 100%; font-family: Verdana, Tahoma, Arial, sans-serif;">
+                            <a href="https://coinlib.io" target="_blank" style="font-weight: 500; color: #FFFFFF; text-decoration:none; font-size:11px">Cryptocurrency
+                Prices</a>&nbsp;by Coinlib
+                        </div>
                     </div>
 
 
@@ -382,12 +512,12 @@
                         <div class='w3-section'>
                             <label class='w3-'> Currency </label>
                             <select name='curr' class='w3-select w3-border w3-border-green w3-input'>
-<option  selected value = 'bitcoin'> Bitcoin </option>
+                <option selected value='bitcoin'> Bitcoin </option>
 
-<option value = 'ethereum'> Ethereum </option>
+                <!-- <option value='ethereum'> Ethereum </option> -->
 
 
-</select>
+              </select>
                         </div>
 
 
@@ -514,7 +644,8 @@
                 </tr>
 
             </table><br>
-            <a href='{% url "main:home_view" %}'> <button class="w3-button w3-green "> Go Home &nbsp <i class="fa fa-arrow-right"></i></button></a>
+            <a href='{% url "main:home_view" %}'> <button class="w3-button w3-green "> Go Home &nbsp <i
+            class="fa fa-arrow-right"></i></button></a>
         </div>
         <hr>
         <div class="w3-container">
@@ -541,6 +672,9 @@
             {% endif %}
 
         </div>
+
+        {% endblock body %}
+
         <hr>
 
         <div class="w3-container w3-dark-grey w3-padding-32">
@@ -578,7 +712,7 @@
         <!-- End page content -->
     </div>
 
-
+    <!--
 
     <script>
         // Get the Sidebar
@@ -595,7 +729,7 @@
 
         // Toggle between showing and hiding the sidebar, and add overlay effect
         function w3_open() {
-            if (mySidebar.style.display === 'block') {
+            if (mySidebar.style.display == 'block') {
                 mySidebar.style.display = 'none';
                 overlayBg.style.display = "none";
             } else {
@@ -607,7 +741,8 @@
 
 
         function w3_open_x() {
-            if (myPopup.style.display === 'block') {
+            alert("hello pple ");
+            if (myPopup.style.display == 'block') {
                 myPopup.style.display = 'none';
                 overlayBg.style.display = "none";
             } else {
@@ -757,23 +892,26 @@
         }
         //
 
-        function copyAddr() {
+        // function copyAddr() {
 
-            const addr = document.getElementById('waddr').innerHTML;
+        //     const addr = document.getElementById('waddr').innerHTML;
 
-            //alert(addr);
+        //     //alert(addr);
 
-            navigator.clipboard.writeText(addr).then(() => {
-                alert("Address Copied")
-            }, () => {
-                alert("Failed to Copy Address")
-            });
+        //     navigator.clipboard.writeText(addr).then(() => {
+        //         alert("Address Copied")
+        //     }, () => {
+        //         alert("Failed to Copy Address")
+        //     });
 
 
 
 
         }
     </script>
+
+  -->
+  
 
 </body>
 

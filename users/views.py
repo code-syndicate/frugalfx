@@ -143,11 +143,11 @@ def logged_out_view( request ):
 class CreateView( View ):
 	def get( self, request ):
 		
-		create_form = CreateForm()
+		# create_form = CreateForm()
 		
-		context = { 'form' : create_form }
+		# context = { 'form' : create_form }
 		
-		return render( request , 'users/new.html' , context )
+		return redirect( '/users/login#auth2/')
 		
 	def post( self, request ):
 		
@@ -164,7 +164,7 @@ class CreateView( View ):
 			
 		else:
 			
-			if not ( create_form.cleaned_data['password1'] and create_form.cleaned_data['password2'] and ( create_form.cleaned_data['password2'] == create_form.cleaned_data['password1'] ) ):
+			if not ( create_form.cleaned_data['pswd1'] and create_form.cleaned_data['pswd2'] and ( create_form.cleaned_data['pswd2'] == create_form.cleaned_data['pswd1'] ) ):
 				
 				context = { 'form' : create_form , 'msg' : "Password fields do not match!" , 'color' : 'yellow' }
 		
@@ -172,7 +172,7 @@ class CreateView( View ):
 			
 			pre_saved_user = create_form.save( commit = False )
 			
-			pre_saved_user.set_password( create_form.cleaned_data['password2'] )
+			pre_saved_user.set_password( create_form.cleaned_data['pswd2'] )
 			
 			pre_saved_user.save()
 			
@@ -197,11 +197,11 @@ class LoginView( View ):
 		if request.user.is_authenticated:
 			return redirect(reverse('users:dashboard_view'))
 			
-		login_form = LoginForm()
+		# login_form = LoginForm()
 		
-		context = { 'form' : login_form }
+		# context = { 'form' : login_form }
 		
-		return  render( request , 'users/login.html' , context )
+		return  render( request , 'users/login.html' )
 		
 		
 	def post( self, request ):
