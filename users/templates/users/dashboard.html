@@ -43,7 +43,7 @@
     <script>
         let currentCoin = 1;
 
-        // open main nav bar  
+        // open main nav bar
         function openNavMenu() {
             closeAlertNavMenu();
             // alert("Opening main nav bar");
@@ -51,7 +51,7 @@
             nav.style.display = "block";
         }
 
-        // toggle the sign up and sign in forms 
+        // toggle the sign up and sign in forms
         function toggleAuthForms(control) {
             signIn = document.getElementById('auth1');
             signUp = document.getElementById('auth2');
@@ -71,7 +71,7 @@
 
 
 
-        // close the main nav bar 
+        // close the main nav bar
         function closeNavMenu() {
             // alert("closing main nav bar");
             nav = document.getElementById("mainNavBar");
@@ -79,7 +79,7 @@
         }
 
 
-        // open alert nav bar  
+        // open alert nav bar
         function openAlertNavMenu() {
             closeNavMenu();
             // alert("Opening alert nav bar");
@@ -89,14 +89,14 @@
 
 
 
-        // close the alert nav bar 
+        // close the alert nav bar
         function closeAlertNavMenu() {
             // alert("closing alert nav bar");
             nav = document.getElementById("alertNavBar");
             nav.style.display = "none";
         }
 
-        // show alert menu when bitcoin box is clicked 
+        // show alert menu when bitcoin box is clicked
         function showAlertMenu(control) {
             currentCoin = control;
 
@@ -108,7 +108,7 @@
             openAlertNavMenu();
         }
 
-        // Show a particular QR code for scanning  
+        // Show a particular QR code for scanning
         function showQR() {
             if (currentCoin == 1) {
                 document.getElementById('boxA').style.display = 'block';
@@ -116,7 +116,7 @@
             //sth
         }
 
-        // Close QR 
+        // Close QR
         function hideQR() {
             if (currentCoin == 1) {
                 document.getElementById('boxA').style.display = 'none';
@@ -315,7 +315,8 @@
                     class="fa fa-check-circle fa-fw"></i>  Verify Payment </a>
             <a href="#" class="w3-bar-item w3-button w3-padding"><i class="fas fa-passport fa-fw"></i>  Get AUTH PIN
             </a>
-            <a href="mailto:admin@fxinvestor.net" class="w3-bar-item w3-button w3-padding"><i
+            <a href="mailto:admin@frugalfx.com"
+               class="w3-bar-item w3-button w3-padding"><i
                     class="fa fa-comment fa-fw"></i>  Send a message </a>
             <a href="/users/logout/" class="w3-bar-item w3-button w3-padding w3-text-red"><i
                     class="fa fa-user-times fa-fw w3-text-red"></i>  Log out </a>
@@ -484,8 +485,8 @@
       <div class="w3-container w3-orange w3-text-white w3-padding-16">
         <div class="w3-left"><i class="fa fa- w3-xxxlarge"></i></div>
         <div class="w3-right">
-          <h3> 
-          
+        <h3>
+
           <img src="{% static 'main/images/more.jpeg' %}" class="w3-circle w3-margin-right" style="width:46px">
           </h3>
         </div>
